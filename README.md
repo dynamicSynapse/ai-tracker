@@ -19,12 +19,23 @@ A futuristic, privacy-first desktop application built with React, Vite, and Elec
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### 📦 Quick Install (Windows .exe)
+For non-technical users, you do **not** need to install Node.js, NPM, or any other dependencies. The application is entirely self-contained!
+
+1. Go to the [Releases](../../releases) tab on GitHub.
+2. Download the latest `AI Tracker Setup.exe`.
+3. Double-click the `.exe` to install and launch the app automatically.
+
+---
+
+### 💻 Developer Setup (Source Code)
+
+#### Prerequisites
 - [Node.js](https://nodejs.org/) (v18+ recommended)
 - A [Telegram Bot Token](https://core.telegram.org/bots/features#botfather) (optional, if you want mobile logging)
 - An AI API Key (Fireworks, OpenAI, Google, or Anthropic)
 
-### Installation
+#### Installation
 
 1. Clone the repository:
    ```bash
