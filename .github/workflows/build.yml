@@ -26,12 +26,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
       - name: Install Dependencies
         # Using npm install instead of npm ci because npm ci triggers 
         # aggressive folder deletion which often causes EPERM locking errors on Windows runners
-        run: npm install
+        # Removing audit speeds up the process and prevents memory crashes on the free GitHub runners
+        run: npm install --no-audit --no-fund
 
       - name: Compile TypeScript & Vite
         run: npm run build
