@@ -19,14 +19,12 @@ A futuristic, privacy-first desktop application built with React, Vite, and Elec
 
 ## 🚀 Getting Started
 
-### 📦 Quick Install (Windows & Mac)
+### 📦 Quick Install (Windows)
 For non-technical users, you do **not** need to install Node.js, NPM, or Python. The application is entirely self-contained!
 
-1. Go to the [Releases](../../releases) tab on the right side of this GitHub page.
-2. Download the installer for your system:
-   - **For Windows**: Download `AI.Tracker.Setup.exe` and double-click to install.
-   - **For Mac**: Download `AI.Tracker.dmg`, double-click it, and drag the app into your Applications folder. *(Note: You may need to bypass Apple Gatekeeper by right-clicking the app and selecting 'Open' the first time).*
-3. Launch the app! All data is stored privately on your local hard drive.
+1. Download the `AI Tracker Setup 1.0.0.exe` file located right here in the main folder of this repository. (Click on it, then click the **Download raw file** icon).
+2. Double-click to install and launch the app automatically.
+3. All data is stored privately on your local hard drive.
 
 ---
 
@@ -62,10 +60,7 @@ You do **NOT** need to configure `.env` files. Simply launch the application, cl
 
 ## 📦 Building for Production
 
-This repository is configured with a **GitHub Actions CI/CD Pipeline**. 
-Every time code is pushed to the `main` branch, remote servers will automatically compile the raw TypeScript code into the final Mac (`.dmg`) and Windows (`.exe`) installers. 
-
-If you want to manually build it on your own machine instead:
+If you want to manually compile the application from the raw source code instead of using the provided `.exe`:
 ```bash
 # To build the Windows installer
 npm run dist:win
