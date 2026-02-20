@@ -19,12 +19,14 @@ A futuristic, privacy-first desktop application built with React, Vite, and Elec
 
 ## 🚀 Getting Started
 
-### 📦 Quick Install (Windows .exe)
-For non-technical users, you do **not** need to install Node.js, NPM, or any other dependencies. The application is entirely self-contained!
+### 📦 Quick Install (Windows & Mac)
+For non-technical users, you do **not** need to install Node.js, NPM, or Python. The application is entirely self-contained!
 
-1. Go to the [Releases](../../releases) tab on GitHub.
-2. Download the latest `AI Tracker Setup.exe`.
-3. Double-click the `.exe` to install and launch the app automatically.
+1. Go to the [Releases](../../releases) tab on the right side of this GitHub page.
+2. Download the installer for your system:
+   - **For Windows**: Download `AI.Tracker.Setup.exe` and double-click to install.
+   - **For Mac**: Download `AI.Tracker.dmg`, double-click it, and drag the app into your Applications folder. *(Note: You may need to bypass Apple Gatekeeper by right-clicking the app and selecting 'Open' the first time).*
+3. Launch the app! All data is stored privately on your local hard drive.
 
 ---
 
@@ -60,11 +62,18 @@ You do **NOT** need to configure `.env` files. Simply launch the application, cl
 
 ## 📦 Building for Production
 
-To create a standalone executable for Windows, macOS, or Linux:
+This repository is configured with a **GitHub Actions CI/CD Pipeline**. 
+Every time code is pushed to the `main` branch, remote servers will automatically compile the raw TypeScript code into the final Mac (`.dmg`) and Windows (`.exe`) installers. 
+
+If you want to manually build it on your own machine instead:
 ```bash
-npm run build
+# To build the Windows installer
+npm run dist:win
+
+# To build the macOS DMG (Must be run on a Mac!)
+npm run dist:mac
 ```
-The compiled binaries will be located in the `release/build` directory.
+The compiled binaries will be output to the local `release/` directory.
 
 ## 📄 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
