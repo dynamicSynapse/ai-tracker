@@ -1,0 +1,50 @@
+[
+    {
+        "path": "notes/mathematics/linear-algebra.md",
+        "name": "linear-algebra.md",
+        "mtime": 1708300000,
+        "tags": [
+            "#math",
+            "#linear-algebra",
+            "#study"
+        ],
+        "frontmatter": {
+            "habit": "daily-reading",
+            "priority": 3,
+            "subject": "Mathematics",
+            "difficulty": "medium"
+        }
+    },
+    {
+        "path": "notes/physics/quantum-mechanics.md",
+        "name": "quantum-mechanics.md",
+        "mtime": 1708200000,
+        "tags": [
+            "#physics",
+            "#quantum",
+            "#advanced"
+        ],
+        "frontmatter": {
+            "habit": "deep-study",
+            "priority": 5,
+            "subject": "Physics",
+            "difficulty": "hard"
+        }
+    },
+    {
+        "path": "notes/computer-science/algorithms.md",
+        "name": "algorithms.md",
+        "mtime": 1708100000,
+        "tags": [
+            "#cs",
+            "#algorithms",
+            "#study"
+        ],
+        "frontmatter": {
+            "habit": "daily-reading",
+            "priority": 4,
+            "subject": "Computer Science",
+            "difficulty": "medium"
+        }
+    }
+]
