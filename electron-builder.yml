@@ -11,16 +11,18 @@ win:
     - target: nsis
       arch:
         - x64
-    - target: portable
-      arch:
-        - x64
 nsis:
   oneClick: false
   allowToChangeInstallationDirectory: true
   createDesktopShortcut: true
   createStartMenuShortcut: true
-portable:
-  artifactName: "AI-Tracker-Portable-${version}.exe"
+mac:
+  target: dmg
+  icon: build/icon.icns
+  hardenedRuntime: true
+  gatekeeperAssess: false
+dmg:
+  sign: false
 asar: true
 extraResources:
   - from: dist/renderer

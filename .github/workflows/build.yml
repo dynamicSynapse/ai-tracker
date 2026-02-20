@@ -1,0 +1,60 @@
+name: Build Electron App
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        # We only need windows and macos as requested
+        os: [windows-latest, macos-latest]
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Compile TypeScript & Vite
+        run: npm run build
+
+      - name: Build Windows Executable
+        if: matrix.os == 'windows-latest'
+        run: npm run dist:win
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build macOS DMG
+        if: matrix.os == 'macos-latest'
+        run: npm run dist:mac
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # We explicitly disable macOS code signing for open source since
+          # Apple Developer IDs cost $99/yr and require manual cert provisioning.
+          # Users downloading the DMG will just need to bypass Gatekeeper.
+          CSC_IDENTITY_AUTO_DISCOVERY: false
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: AI-Tracker-Executables-${{ matrix.os }}
+          path: |
+            release/*.exe
+            release/*.dmg
+          retention-days: 7
