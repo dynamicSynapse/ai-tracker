@@ -29,7 +29,9 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies
-        run: npm ci
+        # Using npm install instead of npm ci because npm ci triggers 
+        # aggressive folder deletion which often causes EPERM locking errors on Windows runners
+        run: npm install
 
       - name: Compile TypeScript & Vite
         run: npm run build
