@@ -33,7 +33,6 @@ async function runOpenAICompatible(url: string, keySetting: string, modelSetting
         },
         body: JSON.stringify({
             model: model,
-            response_format: { type: 'json_object' },
             messages: [
                 { role: 'system', content: systemPrompt },
                 { role: 'user', content: userPrompt }
@@ -71,10 +70,7 @@ async function runGoogleGemini(systemPrompt: string, userPrompt: string, customM
             contents: [{
                 role: 'user',
                 parts: [{ text: userPrompt }]
-            }],
-            generationConfig: {
-                responseMimeType: "application/json"
-            }
+            }]
         })
     });
 
